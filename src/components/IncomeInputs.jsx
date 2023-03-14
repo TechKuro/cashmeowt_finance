@@ -19,6 +19,7 @@ return (
         </label>
         <br />
         <label>
+            Additional Income
             <input type="number" value={additionalIncome} onChange={handleAdditionalChange} />
         </label>
     </div>
