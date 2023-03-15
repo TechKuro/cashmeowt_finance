@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import IncomeInputs from './components/IncomeInputs';
 import SelectDropdown from './components/SelectDropdown';
-
-
+import AmountSpent from './components/AmountSpent';
 function App() {
   const options = [
     {value: 'Rent', label: 'Rent'},
@@ -24,6 +23,8 @@ function App() {
       <h1>Enter Your Incomes Here</h1>
       
       <IncomeInputs />
+      <h1>Enter Your Expenses </h1>
+      <AmountSpent/>
       <div>
         <h2>Test for Position</h2>
         <SelectDropdown options={options} onChange={handleDropdownChange} />
