@@ -2,6 +2,7 @@ import { useState } from 'react';
 import IncomeInputs from './components/IncomeInputs';
 import SelectDropdown from './components/SelectDropdown';
 import AmountSpent from './components/AmountSpent';
+import SubmitButton from './components/SubmitButton';
 function App() {
   const options = [
     {value: 'Rent', label: 'Rent'},
@@ -29,6 +30,9 @@ function App() {
         <h2>Test for Position</h2>
         <SelectDropdown options={options} onChange={handleDropdownChange} />
         <p>Test for selected element {selectedOptions}</p>
+      </div>
+      <div>
+        <SubmitButton />
       </div>
     </div>
 
