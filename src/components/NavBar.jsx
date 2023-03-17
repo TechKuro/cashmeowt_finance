@@ -6,6 +6,7 @@ import Ticker from "./Ticker"
 
 const Nav = () => {
 
+// api call    
     const [stockData, setStockData] = useState(0);
 
     useEffect(() => {

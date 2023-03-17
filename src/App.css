@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+/* css for marquee/ticker */
+.ticker {
+  display: flex;
+  padding: 10px;
+}
+
+.marquee-item {
+  padding: 3px;
+  font-size: large;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
