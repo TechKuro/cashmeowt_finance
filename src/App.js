@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import 'semantic-ui-css/semantic.min.css'
 import IncomeInputs from './components/IncomeInputs';
 import SelectDropdown from './components/SelectDropdown';
 import AmountSpent from './components/AmountSpent';
+import SubmitButton from './components/SubmitButton';
+import NavBar from './components/NavBar';
 function App() {
   const options = [
     {value: 'Rent', label: 'Rent'},
@@ -20,6 +23,7 @@ function App() {
 
   return (
     <div>
+      <NavBar />
       <h1>Enter Your Incomes Here</h1>
       
       <IncomeInputs />
@@ -30,12 +34,15 @@ function App() {
         <SelectDropdown options={options} onChange={handleDropdownChange} />
         <p>Test for selected element {selectedOptions}</p>
       </div>
+      <div>
+        <SubmitButton />
+      </div>
     </div>
 
   )
 
 
-}
+ }
 
 export default App;
 
