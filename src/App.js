@@ -2,7 +2,11 @@ import { useState } from 'react';
 import IncomeInputs from './components/IncomeInputs';
 import SelectDropdown from './components/SelectDropdown';
 import AmountSpent from './components/AmountSpent';
+import TotalIncome from './components/TotalIncome';
 function App() {
+
+    
+
   const options = [
     {value: 'Rent', label: 'Rent'},
     {value: 'Petrol', label: 'Petrol'},
@@ -13,7 +17,9 @@ function App() {
   ];
 
   const [selectedOptions, setSelectionOptions] = useState(options[0].value);
-
+  const [mainIncome, setmainIncome] = useState([]);
+  const [additionalIncome, setadditionalIncome] = useState([]);
+  
   const handleDropdownChange = (event) => {
     setSelectionOptions(event.target.value);
   };
@@ -22,7 +28,10 @@ function App() {
     <div>
       <h1>Enter Your Incomes Here</h1>
       
-      <IncomeInputs />
+      <IncomeInputs setmainIncome={setmainIncome} 
+      additionalIncome={additionalIncome}
+      setadditionalIncome={setadditionalIncome}
+       mainIncome={mainIncome} />
       <h1>Enter Your Expenses </h1>
       <AmountSpent/>
       <div>
@@ -30,6 +39,8 @@ function App() {
         <SelectDropdown options={options} onChange={handleDropdownChange} />
         <p>Test for selected element {selectedOptions}</p>
       </div>
+
+      <TotalIncome mainIncome={mainIncome} additionalIncome={additionalIncome} />
     </div>
 
   )
