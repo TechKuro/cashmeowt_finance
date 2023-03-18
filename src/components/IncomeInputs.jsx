@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 
-function IncomeInputs() {
-    const [mainIncome, setmainIncome] = useState('');
-    const [additionalIncome, setadditionalIncome] = useState('');
-
+function IncomeInputs({setmainIncome, mainIncome, setadditionalIncome,additionalIncome}) {
+    
+    
     const handleMainChange = (event) => {
         setmainIncome(event.target.value);
     };
