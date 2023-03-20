@@ -15,12 +15,12 @@ return (
     <div>
         <label>
             Main Income:
-            <input type="number" value={mainIncome} onChange={handleMainChange} />
+            <input className='pl-8' type="number" value={mainIncome} onChange={handleMainChange} />
         </label>
         <br />
         <label>
-            Additional Income
-            <input type="number" value={additionalIncome} onChange={handleAdditionalChange} />
+            Additional Income:
+            <input className='pl-4' type="number" value={additionalIncome} onChange={handleAdditionalChange} />
         </label>
     </div>
 );
