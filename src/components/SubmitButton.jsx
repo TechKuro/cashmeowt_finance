@@ -1,17 +1,11 @@
 import React from 'react'
-import { Button, Icon } from 'semantic-ui-react'
 
-const submitButton = () => {
+const SubmitButton = () => {
 return(
   <div>
-    <Button animated>
-      <Button.Content visible>Submit</Button.Content>
-      <Button.Content hidden>
-        <Icon name='arrow right' />
-      </Button.Content>
-    </Button>
+    <button className=' bg-orange-200'>Submit</button>
   </div>
 )
 }
 
-export default submitButton;
+export default SubmitButton
