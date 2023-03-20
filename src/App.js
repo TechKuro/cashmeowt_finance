@@ -40,11 +40,7 @@ function App() {
         <p>Test for selected element {selectedOptions}</p>
       </div>
 
-<<<<<<< HEAD
-      <TotalIncome mainIncome={mainIncome} additionalIncome={additionalIncome}/>
-=======
       <TotalIncome mainIncome={mainIncome} additionalIncome={additionalIncome} />
->>>>>>> totalincome
     </div>
 
   )
