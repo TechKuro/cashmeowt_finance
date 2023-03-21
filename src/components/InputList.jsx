@@ -24,12 +24,21 @@ const InputList = () => {
   return (
     <div>
       {inputs.map((item, index) => (
-        <div key={index}>
+        <div key={index} style={{ display: "flex", alignItems: "center" }}>
           <input type="number" value={item.value} readOnly />
           <span>{item.option}</span>
+          <span
+            style={{
+              color: "green",
+              fontSize: "1.5em",
+              marginLeft: "10px",
+            }}
+          >
+            ✓
+          </span>
         </div>
       ))}
-      <div>
+      <div style={{ display: "flex", alignItems: "center" }}>
         <input
           type="number"
           value={inputValue}
