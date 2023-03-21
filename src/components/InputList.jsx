@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SelectDropdown from "./SelectDropdown";
 
-const InputList = () => {
+const InputList = ({ onAdd }) => {
   const options = [
     { value: "Rent", label: "Rent" },
     { value: "Petrol", label: "Petrol" },
@@ -19,6 +19,7 @@ const InputList = () => {
   const handleSave = () => {
     setInputs([...inputs, { value: inputValue, option: selectedOptions }]);
     setInputValue("");
+    onAdd({ value: parseFloat(inputValue), option: selectedOptions });
   };
 
   return (

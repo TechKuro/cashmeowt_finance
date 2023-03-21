@@ -51,11 +51,11 @@ function App() {
         />
         
       </div>
-      <h2>Numerical Inputs with Save Button</h2>
+      <h2>Monthly Expenses</h2>
 
       <InputList options={options} onAdd={handleAddInput} />
 
-      <h2>Option Totals</h2>
+      <h2>Heres your breakdown</h2>
       <ul>
         {Object.entries(optionValues).map(([key, value]) => (
           <li key={key}>
