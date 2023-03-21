@@ -4,12 +4,8 @@ import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import Motto from "./components/Motto";
 import IncomeInputs from "./components/IncomeInputs";
-import SelectDropdown from "./components/SelectDropdown";
-import AmountSpent from "./components/AmountSpent";
 import TotalIncome from "./components/TotalIncome";
-import SubmitButton from "./components/SubmitButton";
-import Ticker from "./components/Ticker";
-import InputList from "./components/InputList"; // Make sure to import InputList
+import InputList from "./components/InputList"; 
 
 function App() {
   const options = [
@@ -24,7 +20,18 @@ function App() {
   const [selectedOptions, setSelectionOptions] = useState(options[0].value);
   const [mainIncome, setmainIncome] = useState([]);
   const [additionalIncome, setadditionalIncome] = useState([]);
+  const [optionValues, setOptionValues] = useState({});
 
+  const handleAddInput = (inputData) => {
+    setOptionValues((prev) => {
+      const { option, value } = inputData;
+      if (prev[option]) {
+        return { ...prev, [option]: prev[option] + value };
+      } else {
+        return { ...prev, [option]: value };
+      }
+    });
+  };
   return (
     <div>
       <div>
@@ -42,16 +49,23 @@ function App() {
           mainIncome={mainIncome}
           additionalIncome={additionalIncome}
         />
-        <SelectDropdown
-          options={options}
-          setSelectionOptions={setSelectionOptions}
-        />
-        {/* Add InputList component here */}
-        <h2>Numerical Inputs with Save Button</h2>
-        <InputList />
+        
       </div>
+      <h2>Numerical Inputs with Save Button</h2>
+
+      <InputList options={options} onAdd={handleAddInput} />
+
+      <h2>Option Totals</h2>
+      <ul>
+        {Object.entries(optionValues).map(([key, value]) => (
+          <li key={key}>
+            {key}: {value}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
 
 export default App;
+
