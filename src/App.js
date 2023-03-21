@@ -2,11 +2,13 @@ import { useState } from 'react';
 import TopBar from './components/TopBar';
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
+import Motto from './components/Motto';
 import IncomeInputs from './components/IncomeInputs';
 import SelectDropdown from './components/SelectDropdown';
 import AmountSpent from './components/AmountSpent';
 import TotalIncome from './components/TotalIncome';
 import SubmitButton from './components/SubmitButton';
+import Ticker from './components/Ticker';
  
 
 function App() {
@@ -31,28 +33,20 @@ function App() {
     setSelectionOptions(event.target.value);
   };
 
-  return (<div>
-         <TopBar />
-         <NavBar /> 
-         <Hero />        
-         <div className='grid grid-rows-2 grid-cols-2 bg-gradient-to-l from-blue-700 to-yellow-200 h-screen w-screen '>
-         <div className='mx-8 my-8'>
-            <h1 className='text-xl ml-5'>Enter Your Incomes Here</h1>
-            <br></br>
+  return (
+
+        <div>
+          <div>
+            <TopBar />
+            <NavBar /> 
+            <Hero /> 
+            <Motto /> 
             <IncomeInputs setmainIncome={setmainIncome} 
             additionalIncome={additionalIncome}
             setadditionalIncome={setadditionalIncome}
-            mainIncome={mainIncome} />
-            <TotalIncome mainIncome={mainIncome} additionalIncome={additionalIncome} />
-      </div>
-      <div>
-           <h1>Enter Your Expenses </h1>
-           <AmountSpent/>
-           <SelectDropdown options={options} onChange={handleDropdownChange} />
-           <SubmitButton />
-      </div> 
-      </div>  
-      </div>  
+            mainIncome={mainIncome} />      
+         </div>
+      </div>    
   )
 
 

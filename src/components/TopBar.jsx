@@ -17,7 +17,7 @@ const TopBar = () =>{
                 <AiFillPhone size={20} className='mr-2 text-[var(--primary-dark)]'/>
                 <p className="text-sm text-gray-700">020-8-1234567</p>
               </div>
-            <button>Get a Free Quote</button>
+            <button>Sign In</button>
             </div>
         </div>
     )
