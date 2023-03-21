@@ -6,20 +6,6 @@ import Ticker from "./Ticker"
 
 const NavBar = () => {
 
-    const [stockData, setStockData] = useState(0);
-
-    useEffect(() => {
-        const apiKey = "ebe3699433b327a341b2e8a0d2c8d11d"
-        const api = "https://financialmodelingprep.com/api/v3/profile/AAPL,GOOG,MSFT,FB,AMZN,NVDA,TSLA,NFLX?apikey=" + apiKey;
-        
-        
-        fetch(api).then(res => res.json()).then((data) => {
-            setStockData(data)
-           
-           console.log(stockData)
-        })
-    },[]);
-
 const [nav, setNav] = useState(false)
 
 const handleNav = () =>{
@@ -95,14 +81,7 @@ const handleNav = () =>{
         </div>
     </div>
        
-        <Marquee>
-  {stockData ? stockData.map((item) => {
-    return (
-    <Ticker item={item}/>
-    )
-  }): ""}
-</Marquee>
-        </div>
+
     );
 };
 
