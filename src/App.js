@@ -43,6 +43,7 @@ function App() {
             additionalIncome={additionalIncome}
             setadditionalIncome={setadditionalIncome}
             mainIncome={mainIncome} />      
+            
          </div>
       </div>    
   )
