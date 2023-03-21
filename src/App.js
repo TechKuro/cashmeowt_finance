@@ -27,9 +27,7 @@ function App() {
   
 
   
-  const handleDropdownChange = (event) => {
-    setSelectionOptions(event.target.value);
-  };
+
 
   return (
 
@@ -40,10 +38,11 @@ function App() {
             <Hero /> 
             <Motto /> 
             <IncomeInputs setmainIncome={setmainIncome} 
-            additionalIncome={additionalIncome}
+             additionalIncome={additionalIncome}
             setadditionalIncome={setadditionalIncome}
-            mainIncome={mainIncome} />      
-            
+            mainIncome={mainIncome} />
+             <TotalIncome mainIncome={mainIncome} additionalIncome={additionalIncome} />
+             <SelectDropdown options={options} setSelectionOptions={setSelectionOptions} />  
          </div>
       </div>    
   )
