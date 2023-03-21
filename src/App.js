@@ -12,9 +12,6 @@ import Ticker from './components/Ticker';
  
 
 function App() {
-
-    
-
   const options = [
     {value: 'Rent', label: 'Rent'},
     {value: 'Petrol', label: 'Petrol'},
@@ -24,7 +21,6 @@ function App() {
     {value: 'Mortgage', label: 'Mortgage'},
     {value: 'Childcare', label: 'Childcare'}
   ];
-
   const [selectedOptions, setSelectionOptions] = useState(options[0].value);
   const [mainIncome, setmainIncome] = useState([]);
   const [additionalIncome, setadditionalIncome] = useState([]);
@@ -50,8 +46,6 @@ function App() {
          </div>
       </div>    
   )
-
-
 }
 
 export default App;
