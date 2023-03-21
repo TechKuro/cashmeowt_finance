@@ -5,10 +5,7 @@ import Hero from './components/Hero';
 import Motto from './components/Motto';
 import IncomeInputs from './components/IncomeInputs';
 import SelectDropdown from './components/SelectDropdown';
-import AmountSpent from './components/AmountSpent';
 import TotalIncome from './components/TotalIncome';
-import SubmitButton from './components/SubmitButton';
-import Ticker from './components/Ticker';
  
 
 function App() {
