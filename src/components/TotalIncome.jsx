@@ -20,10 +20,11 @@ function TotalIncome({mainIncome, additionalIncome}) {
         })
 
         setTotalIncome(sum)
-<<<<<<< HEAD
+
         localStorage.setItem('sum',JSON.stringify(sum))
-=======
->>>>>>> totalincome
+
+
+
     },[mainIncome,additionalIncome])
 
 
