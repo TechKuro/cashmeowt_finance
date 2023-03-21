@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { FaBars, FaFacebookF, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { BsChatSquareDots } from 'react-icons/bs';;
 import Marquee from "react-fast-marquee";
-import React, { useState, useEffect } from 'react';
 import Ticker from "./Ticker"
 
 
@@ -76,13 +74,7 @@ const handleNav = () =>{
         </ul>
         </div>
     </div>
-  )
-}
-
-            <Menu.Item position="right">Reset Screen</Menu.Item>
-            <Menu.Item >About us</Menu.Item>
-            <Menu.Item position="right">Login</Menu.Item>
-        </Menu>
+       
         <Marquee>
   {stockData ? stockData.map((item) => {
     return (
@@ -95,4 +87,4 @@ const handleNav = () =>{
 };
 
 
-export default Nav;
+export default NavBar;

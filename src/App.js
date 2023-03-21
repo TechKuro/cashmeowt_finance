@@ -27,8 +27,7 @@ function App() {
   const [mainIncome, setmainIncome] = useState([]);
   const [additionalIncome, setadditionalIncome] = useState([]);
   
-  const [mainIncome, setmainIncome] = useState([]);
-  const [additionalIncome, setadditionalIncome] = useState([]);
+
   
   const handleDropdownChange = (event) => {
     setSelectionOptions(event.target.value);
