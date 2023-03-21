@@ -20,6 +20,11 @@ function TotalIncome({mainIncome, additionalIncome}) {
         })
 
         setTotalIncome(sum)
+
+        localStorage.setItem('sum',JSON.stringify(sum))
+
+
+
     },[mainIncome,additionalIncome])
 
 

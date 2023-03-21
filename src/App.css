@@ -36,8 +36,6 @@
     transform: rotate(360deg);
   }
 }
-
-/* css for marquee/ticker */
 .ticker {
   display: flex;
   padding: 10px;
