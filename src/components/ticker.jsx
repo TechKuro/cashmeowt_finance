@@ -1,3 +1,5 @@
+// function to print api info to the page
+
 import { useEffect, useState } from "react";
 
 function Ticker({item}){
