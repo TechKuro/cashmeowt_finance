@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TopBar from "./components/TopBar";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import Motto from "./components/Motto";
 import IncomeInputs from "./components/IncomeInputs";
 import TotalIncome from "./components/TotalIncome";
-import InputList from "./components/InputList"; 
+import InputList from "./components/InputList";
+import IncomeExpenseChart from './components/IncomeExpenseChart';
+
 
 function App() {
   const options = [
@@ -17,12 +19,17 @@ function App() {
     { value: "Mortgage", label: "Mortgage" },
     { value: "Childcare", label: "Childcare" },
   ];
-  const [selectedOptions, setSelectionOptions] = useState(options[0].value);
+
   const [mainIncome, setmainIncome] = useState([]);
   const [additionalIncome, setadditionalIncome] = useState([]);
   const [optionValues, setOptionValues] = useState({});
   const [totalIncome, setTotalIncome] = useState(0);
   const [totalExpenses, setTotalExpenses] = useState(0);
+  const [netIncome, setNetIncome] = useState(0);
+  
+  useEffect(() => {
+    setNetIncome(totalIncome - totalExpenses);
+  }, [totalIncome, totalExpenses]);
 
 
   const handleAddInput = (inputData) => {
@@ -66,7 +73,13 @@ function App() {
                 </li>
               ))}
             </ul>
-            </div>  
+
+            <IncomeExpenseChart
+        totalIncome={totalIncome}
+        totalExpenses={totalExpenses}
+        netIncome={netIncome}
+      />
+    </div>
   );
 }
 
