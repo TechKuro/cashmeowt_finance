@@ -5,5 +5,4 @@ function Ticker({item}){
     </div>
     )
     }
-
 export default Ticker;
