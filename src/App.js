@@ -42,7 +42,8 @@ function App() {
             <IncomeInputs setmainIncome={setmainIncome} 
             additionalIncome={additionalIncome}
             setadditionalIncome={setadditionalIncome}
-            mainIncome={mainIncome} />      
+            mainIncome={mainIncome} /> 
+               
          </div>
       </div>    
   )
