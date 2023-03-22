@@ -70,7 +70,7 @@ function App() {
               {Object.entries(optionValues).map(([key, value]) => (
                 <li  className='text-2xl'key={key}>
                   {key}: {value}
-                </li>
+                   </li>
               ))}
             </ul>
 
