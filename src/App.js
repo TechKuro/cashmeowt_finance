@@ -46,17 +46,23 @@ function App() {
           setTotalIncome={setTotalIncome}
           totalIncome={totalIncome}
         />
-        
-          <InputList options={options} onAdd={handleAddInput} />
-          <h2 className="text-center">Here is your breakdown</h2>
-            <ul>
-              {Object.entries(optionValues).map(([key, value]) => (
-                <li  className='text-2xl'key={key}>
+         <InputList options={options} onAdd={handleAddInput} />
+            <ul className='max-w-[1140px] m-auto w-full p-10 bg-gradient-to-r from-yellow-300  to-lime-600 rounded shadow-lg'>
+                <div className='lg:flex lg:justify-between w-full items-center'>
+                <div className='flex flex-col my-2 py-2'>
+                <div className="relative mt-2 rounded-md shadow-sm">
+                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                </div>
+                {Object.entries(optionValues).map(([key, value]) => (
+                   <li  className='text-2xl'key={key}>
                   {key}: {value}
-                </li>
+                   </li>
               ))}
-            </ul>
-            </div>  
+                </div> 
+                </div>
+                </div>
+            </ul>  
+            </div>
   );
 }
 

@@ -22,14 +22,17 @@ const InputList = ({ onAdd }) => {
     onAdd({ value: parseFloat(inputValue), option: selectedOptions });
   };
 
-  return (<div className='max-w-[1140px] m-auto w-full md:flex mt-1'>
-          <div className='relative p-4'>
-            <h3 className='absolute z-10 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-black'>Monthly Expenses</h3>
-      <div className='w-full h-full object-cover relative border-4 border-white shadow-lg'/>
-      {inputs.map((item, index) => (
+  return (<div id='spent' className='max-w-[1140px] m-auto w-full p-10 bg-gradient-to-r from-yellow-300  to-lime-600 rounded shadow-lg'>
+          <div className='lg:flex lg:justify-between w-full items-center'>
+          <div className='flex flex-col my-2 py-2'>
+            <h2>Monthly Expenses</h2>
+            <div className="relative mt-2 rounded-md shadow-sm">
+                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                </div>
+             {inputs.map((item, index) => (
         <div key={index} style={{ display: "flex", alignItems: "center" }}>
-          <input type="number" value={item.value} readOnly />
-          <span>{item.option}</span>
+          <input type="number" value={item.value} readOnly className='block w-[80%] rounded-md border-0 py-1.5 pl-7 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="0.00' />
+          <span className="ml-3">{item.option}</span>
           <span
             style={{
               color: "green",
@@ -42,19 +45,22 @@ const InputList = ({ onAdd }) => {
         </div>
       ))}
       <div style={{ display: "flex", alignItems: "center" }}>
-        <input
+        <input className='block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="0.00'
           type="number"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <SelectDropdown
+        <SelectDropdown 
           options={options}
           setSelectionOptions={setSelectionOptions}
         />
-        <button onClick={handleSave}>Save</button>
-    </div>
-    </div>
-    </div>
+        <button className='pl-14'onClick={handleSave}>Save</button>     
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+    
   );
 };
 
