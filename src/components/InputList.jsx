@@ -22,8 +22,10 @@ const InputList = ({ onAdd }) => {
     onAdd({ value: parseFloat(inputValue), option: selectedOptions });
   };
 
-  return (
-    <div>
+  return (<div className='max-w-[1140px] m-auto w-full md:flex mt-1'>
+          <div className='relative p-4'>
+            <h3 className='absolute z-10 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-black'>Monthly Expenses</h3>
+      <div className='w-full h-full object-cover relative border-4 border-white shadow-lg'/>
       {inputs.map((item, index) => (
         <div key={index} style={{ display: "flex", alignItems: "center" }}>
           <input type="number" value={item.value} readOnly />
@@ -50,7 +52,8 @@ const InputList = ({ onAdd }) => {
           setSelectionOptions={setSelectionOptions}
         />
         <button onClick={handleSave}>Save</button>
-      </div>
+    </div>
+    </div>
     </div>
   );
 };
