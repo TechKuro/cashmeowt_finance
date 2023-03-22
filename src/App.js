@@ -22,6 +22,9 @@ function App() {
   const [additionalIncome, setadditionalIncome] = useState([]);
   const [optionValues, setOptionValues] = useState({});
   const [totalIncome, setTotalIncome] = useState(0);
+  const [totalExpenses, setTotalExpenses] = useState(0);
+
+
   const handleAddInput = (inputData) => {
     setOptionValues((prev) => {
       const { option, value } = inputData;
@@ -47,7 +50,14 @@ function App() {
           totalIncome={totalIncome}
         />
         
-          <InputList options={options} onAdd={handleAddInput} />
+        <InputList options={options} onAdd={handleAddInput} totalExpenses={totalExpenses} setTotalExpenses={setTotalExpenses} />
+        <TotalIncome
+        mainIncome={mainIncome}
+        additionalIncome={additionalIncome}
+        totalExpenses={totalExpenses}
+      />
+
+
           <h2 className="text-center">Here is your breakdown</h2>
             <ul>
               {Object.entries(optionValues).map(([key, value]) => (

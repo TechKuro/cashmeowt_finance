@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SelectDropdown from "./SelectDropdown";
 
-const InputList = ({ onAdd }) => {
+const InputList = ({ onAdd, totalExpenses, setTotalExpenses }) => {
   const options = [
     { value: "Rent", label: "Rent" },
     { value: "Petrol", label: "Petrol" },
@@ -20,40 +20,49 @@ const InputList = ({ onAdd }) => {
     setInputs([...inputs, { value: inputValue, option: selectedOptions }]);
     setInputValue("");
     onAdd({ value: parseFloat(inputValue), option: selectedOptions });
+    setTotalExpenses((prevTotal) => prevTotal + parseFloat(inputValue));
   };
 
-  return (<div className='max-w-[1140px] m-auto w-full md:flex mt-1'>
-          <div className='relative p-4'>
-            <h3 className='absolute z-10 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-black'>Monthly Expenses</h3>
-      <div className='w-full h-full object-cover relative border-4 border-white shadow-lg'/>
-      {inputs.map((item, index) => (
-        <div key={index} style={{ display: "flex", alignItems: "center" }}>
-          <input type="number" value={item.value} readOnly />
-          <span>{item.option}</span>
-          <span
-            style={{
-              color: "green",
-              fontSize: "1.5em",
-              marginLeft: "10px",
-            }}
-          >
-            ✓
-          </span>
+  return (
+    <div className="max-w-[1140px] m-auto w-full md:flex mt-1">
+      <div className="relative p-4">
+        <h3 className="absolute z-10 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-black">
+          Monthly Expenses
+        </h3>
+        <div className="w-full h-full object-cover relative border-4 border-white shadow-lg" />
+        {inputs.map((item, index) => (
+          <div key={index} style={{ display: "flex", alignItems: "center" }}>
+            <input type="number" value={item.value} readOnly />
+            <span>{item.option}</span>
+            <span
+              style={{
+                color: "green",
+                fontSize: "1.5em",
+                marginLeft: "10px",
+              }}
+            >
+              ✓
+            </span>
+          </div>
+        ))}
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <input
+            type="number"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+          <SelectDropdown
+            options={options}
+            setSelectionOptions={setSelectionOptions}
+          />
+          <button onClick={handleSave}>Save</button>
         </div>
-      ))}
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <input
-          type="number"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-        <SelectDropdown
-          options={options}
-          setSelectionOptions={setSelectionOptions}
-        />
-        <button onClick={handleSave}>Save</button>
-    </div>
-    </div>
+      </div>
+      {/* Display the total expenses */}
+      <div>
+        <h4>Total Expenses:</h4>
+        <span>{totalExpenses}</span>
+      </div>
     </div>
   );
 };
