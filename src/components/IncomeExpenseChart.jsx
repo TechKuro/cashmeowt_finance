@@ -9,26 +9,36 @@ const IncomeExpenseChart = ({ totalIncome, totalExpenses, netIncome }) => {
   ];
 
   return (
-    <VictoryChart
-      domainPadding={20}
-      theme={VictoryTheme.material}
-      width={400}
-      height={250}
-    >
-      <VictoryAxis />
-      <VictoryAxis dependentAxis />
-      <VictoryBar
-        data={chartData}
-        x="category"
-        y="value"
+    <div style={{ width: '300px', height: '200px', position: 'relative' }}>
+      <VictoryChart
+        domainPadding={20}
+        theme={VictoryTheme.material}
+        width={300}
+        height={200}
         style={{
-          data: {
-            fill: ({ datum }) =>
-              datum.category === 'Total Expenses' ? 'red' : 'green',
+          parent: {
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
           },
         }}
-      />
-    </VictoryChart>
+      >
+        <VictoryAxis />
+        <VictoryAxis dependentAxis />
+        <VictoryBar
+          data={chartData}
+          x="category"
+          y="value"
+          style={{
+            data: {
+              fill: ({ datum }) =>
+                datum.category === 'Total Expenses' ? 'red' : 'green',
+            },
+          }}
+        />
+      </VictoryChart>
+    </div>
   );
 };
 

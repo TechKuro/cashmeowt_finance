@@ -7,6 +7,7 @@ import IncomeInputs from "./components/IncomeInputs";
 import TotalIncome from "./components/TotalIncome";
 import InputList from "./components/InputList";
 import IncomeExpenseChart from './components/IncomeExpenseChart';
+import ExpensePieChart from './components/ExpensePieChart';
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
   const [totalIncome, setTotalIncome] = useState(0);
   const [totalExpenses, setTotalExpenses] = useState(0);
   const [netIncome, setNetIncome] = useState(0);
-  
+
   useEffect(() => {
     setNetIncome(totalIncome - totalExpenses);
   }, [totalIncome, totalExpenses]);
@@ -43,45 +44,46 @@ function App() {
     });
   };
   return (
-      <div>
-        <TopBar />
-        <NavBar />
-        <Hero />
-        <Motto />
-        <IncomeInputs
-          setmainIncome={setmainIncome}
-          additionalIncome={additionalIncome}
-          setadditionalIncome={setadditionalIncome}
-          mainIncome={mainIncome}
-          setTotalIncome={setTotalIncome}
-          totalIncome={totalIncome}
-        />
-        
-        <InputList options={options} onAdd={handleAddInput} totalExpenses={totalExpenses} setTotalExpenses={setTotalExpenses} />
-        <TotalIncome
+    <div>
+      <TopBar />
+      <NavBar />
+      <Hero />
+      <Motto />
+      <IncomeInputs
+        setmainIncome={setmainIncome}
+        additionalIncome={additionalIncome}
+        setadditionalIncome={setadditionalIncome}
+        mainIncome={mainIncome}
+        setTotalIncome={setTotalIncome}
+        totalIncome={totalIncome}
+      />
+      
+      <InputList options={options} onAdd={handleAddInput} totalExpenses={totalExpenses} setTotalExpenses={setTotalExpenses} />
+      <TotalIncome
         mainIncome={mainIncome}
         additionalIncome={additionalIncome}
         totalExpenses={totalExpenses}
       />
 
+      <h2 className="text-center">Here is your breakdown</h2>
+      <ul>
+        {Object.entries(optionValues).map(([key, value]) => (
+          <li className='text-2xl' key={key}>
+            {key}: {value}
+          </li>
+        ))}
+      </ul>
 
-          <h2 className="text-center">Here is your breakdown</h2>
-            <ul>
-              {Object.entries(optionValues).map(([key, value]) => (
-                <li  className='text-2xl'key={key}>
-                  {key}: {value}
-                </li>
-              ))}
-            </ul>
-
-            <IncomeExpenseChart
-        totalIncome={totalIncome}
-        totalExpenses={totalExpenses}
-        netIncome={netIncome}
-      />
+      <div className="flex justify-between items-center flex-wrap">
+        <IncomeExpenseChart
+          totalIncome={totalIncome}
+          totalExpenses={totalExpenses}
+          netIncome={netIncome}
+        />
+        <ExpensePieChart optionValues={optionValues} />
+      </div>
     </div>
   );
 }
 
 export default App;
-
