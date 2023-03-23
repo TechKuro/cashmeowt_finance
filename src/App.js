@@ -56,16 +56,15 @@ function App() {
           setTotalIncome={setTotalIncome}
           totalIncome={totalIncome}
         />
-        
+        < div class="max-w-[1140px] lg:flex md:flex justify-center m-auto w-full p-10 bg-gradient-to-r from-yellow-300  to-lime-600">
         <InputList options={options} onAdd={handleAddInput} totalExpenses={totalExpenses} setTotalExpenses={setTotalExpenses} />
-        <TotalIncome
-        mainIncome={mainIncome}
-        additionalIncome={additionalIncome}
-        totalExpenses={totalExpenses}
-      />
-
-
-          <h2 className="text-center">Here is your breakdown</h2>
+        
+        <div className='max-w-[1140px] md:flex w-full  bg-gradient-to-r from-yellow-300  to-lime-600 rounded shadow-lg'>
+            <div className='lg:flex  flex-col lg:justify-between w-full items-center'>
+            <div className='flex flex-col my-2 py-2'>           
+        <h2 className="text-center pt-8">Here is your Breakdown</h2>
+        </div>
+        <div className="relative mt-2 rounded-md shadow-sm">
             <ul>
               {Object.entries(optionValues).map(([key, value]) => (
                 <li  className='text-2xl'key={key}>
@@ -73,13 +72,21 @@ function App() {
                    </li>
               ))}
             </ul>
-
+            </div>
+            </div>
+            </div>
+        </div>   
+            <TotalIncome
+        mainIncome={mainIncome}
+        additionalIncome={additionalIncome}
+        totalExpenses={totalExpenses}
+      />
             <IncomeExpenseChart
         totalIncome={totalIncome}
         totalExpenses={totalExpenses}
         netIncome={netIncome}
       />
-    </div>
+      </div>
   );
 }
 

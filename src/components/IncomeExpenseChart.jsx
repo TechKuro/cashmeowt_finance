@@ -8,7 +8,12 @@ const IncomeExpenseChart = ({ totalIncome, totalExpenses, netIncome }) => {
     { category: 'Net Income', value: netIncome },
   ];
 
-  return (
+  return (<div id='charts' className='max-w-[1140px] m-auto w-full p-10 bg-gradient-to-r from-yellow-300  to-lime-600 rounded shadow-lg'>
+  <div className='lg:flex lg:justify-between w-full items-center'>
+  <div className='flex flex-col my-2 py-2'>
+    <div className="relative mt-2 rounded-md shadow-sm">
+    </div>
+    
     <VictoryChart
       domainPadding={20}
       theme={VictoryTheme.material}
@@ -29,6 +34,9 @@ const IncomeExpenseChart = ({ totalIncome, totalExpenses, netIncome }) => {
         }}
       />
     </VictoryChart>
+    </div>
+    </div>
+    </div>
   );
 };
 

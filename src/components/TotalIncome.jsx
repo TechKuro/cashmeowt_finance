@@ -26,9 +26,23 @@ function TotalIncome({ mainIncome, additionalIncome, totalExpenses }) {
   }, [mainIncome, additionalIncome, totalExpenses]);
 
   return (
-    <div>
-      <h2>Net Income (Income - Expenses)</h2>
-      <div>£ {netIncome}</div>
+    <div id='disposable' className='max-w-[1140px] m-auto w-full md:flex p-10 bg-gradient-to-r from-yellow-300  to-lime-600 rounded shadow-lg'>
+  <div className='lg:flex lg:justify-center w-full items-center max-w-[1140px] m-auto p-10 bg-gradient-to-r from-yellow-300  to-lime-600 rounded shadow-lg'>
+  <div className='flex flex-col my-2 py-2'>
+  <h2 className="text-center">Total Expenses</h2>
+    <div className="relative mt-2 rounded-md shadow-sm">
+        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+        </div>
+      <div className="text-2xl text-center">£ {totalExpenses}</div>
+   <h2 className="text-center">Disposable Income</h2>
+   <div className="relative mt-2 rounded-md shadow-sm">
+        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+        </div>
+      <div className="text-2xl text-center">£ {netIncome}</div>    
+    </div>
+    </div>
+    </div>
+    </div>
     </div>
   );
 }

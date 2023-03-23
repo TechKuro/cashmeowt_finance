@@ -33,10 +33,10 @@
     @apply font-[Poppins]    
     }
     li{
-    @apply p-4 text-sm    
+    @apply p-4 text-sm hover:text-green-500   
     }
     button{
-    @apply px-4 py-2 border bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] text-white  
+    @apply px-4 py-2 border bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] text-white  hover:text-green-500 
     }
     h2{
     @apply text-xl font-bold
