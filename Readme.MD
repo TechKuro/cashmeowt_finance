@@ -17,8 +17,11 @@ Screenshots: ![Screenshot (28)](https://user-images.githubusercontent.com/117356
 ## Credits
 
 https://github.com/TechKuro
+
 https://github.com/lukinko22
+
 https://github.com/gideonclottey
+
 https://github.com/ionachadwick97
 
 
