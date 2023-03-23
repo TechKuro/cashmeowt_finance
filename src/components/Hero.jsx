@@ -2,7 +2,7 @@ import React from 'react'
 
 const hero = () => {
   return (
-    <div className='w-full h-[100vh]'>
+    <div className='max-w-[1140px] w-full mx-[auto]'>
         <img src='./images/background.jpg'
         className='w-full h-full object-cover'
         />
