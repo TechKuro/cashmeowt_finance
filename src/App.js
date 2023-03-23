@@ -7,6 +7,8 @@ import IncomeInputs from "./components/IncomeInputs";
 import TotalIncome from "./components/TotalIncome";
 import InputList from "./components/InputList";
 import IncomeExpenseChart from './components/IncomeExpenseChart';
+import ExpensePieChart from './components/ExpensePieChart';
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -81,12 +83,18 @@ function App() {
         additionalIncome={additionalIncome}
         totalExpenses={totalExpenses}
       />
-            <IncomeExpenseChart
-        totalIncome={totalIncome}
-        totalExpenses={totalExpenses}
-        netIncome={netIncome}
-      />
+      < div class="max-w-[1140px] lg:flex md:flex justify-center m-auto w-full p-10 bg-gradient-to-r from-yellow-300  to-lime-600">
+        <IncomeExpenseChart
+          totalIncome={totalIncome}
+          totalExpenses={totalExpenses}
+          netIncome={netIncome}
+        />
+        <ExpensePieChart optionValues={optionValues} />
       </div>
+      <br></br>
+      <Footer />
+      </div>
+      
   );
 }
 

@@ -9,7 +9,7 @@ const IncomeExpenseChart = ({ totalIncome, totalExpenses, netIncome }) => {
   ];
 
   return (<div id='charts' className='max-w-[1140px] m-auto w-full p-10 bg-gradient-to-r from-yellow-300  to-lime-600 rounded shadow-lg'>
-  <div className='lg:flex lg:justify-between w-full items-center'>
+  <div className='lg:flex flex-col lg:justify-between w-full items-center'>
   <div className='flex flex-col my-2 py-2'>
     <div className="relative mt-2 rounded-md shadow-sm">
     </div>
